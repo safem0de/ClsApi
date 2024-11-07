@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ClsApi.Application.Usecases.Queries.Employees
 {
-    public class GetEmployeesListQuery
+    public class GetEmployeesQueryHandler
     {
         
     }

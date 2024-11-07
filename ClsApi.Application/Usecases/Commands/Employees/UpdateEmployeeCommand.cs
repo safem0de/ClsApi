@@ -1,8 +1,8 @@
 using MediatR;
 
-namespace ClsApi.Application.Usecases.Commands
+namespace ClsApi.Application.Usecases.Commands.Employees
 {
-    public class CreateEmployeeCommand : IRequest<int>
+    public class UpdateEmployeeCommand : IRequest<int>
     {
         public int EmpNo { get; set; }
         public string FirstName { get; set; } = null!;
@@ -10,6 +10,7 @@ namespace ClsApi.Application.Usecases.Commands
         public string Designation { get; set; } = null!;
         public DateOnly HireDate { get; set; }
         public decimal Salary { get; set; }
+        public decimal? Comm { get; set; }
         public int DeptNo { get; set; }
     }
 }

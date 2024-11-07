@@ -1,5 +1,6 @@
 
 using ClsApi.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClsApi.Infrastructure.Data
 {
@@ -7,16 +8,18 @@ namespace ClsApi.Infrastructure.Data
     {
         public static async Task SeedData(ApplicationDbContext context)
         {
-            if (!context.Employees.Any())
+            if (!await context.Employees.AnyAsync())
             {
-                List<Employee> employees = new List<Employee>();
-
-                employees.Add(new Employee()
-                {
+                List<Employee> employees = new List<Employee>{
+                    new Employee
+                    {
                     EmpNo = 1001,
-                    FirstName = "John", 
+                    FirstName = "John",
                     LastName = "Doe",
-                });
+                    Designation = ""
+                    }
+                };
+
 
                 await context.Employees.AddRangeAsync(employees);
                 await context.SaveChangesAsync();

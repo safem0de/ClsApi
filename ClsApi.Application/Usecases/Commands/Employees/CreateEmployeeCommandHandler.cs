@@ -1,12 +1,33 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+using ClsApi.Domain;
+using ClsApi.Domain.Interfaces.Respositories;
+using MediatR;
 
 namespace ClsApi.Application.Usecases.Commands
 {
-    public class CreateEmployeeCommandHandler
+    public class CreateEmployeeCommandHandler : IRequestHandler<CreateEmployeeCommand, int>
     {
-        
+        private readonly IEmployeeRepository _employeeRepository;
+
+        public CreateEmployeeCommandHandler(IEmployeeRepository employeeRepository)
+        {
+            _employeeRepository = employeeRepository;
+        }
+
+        public async Task<int> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
+        {
+            var employee = new Employee
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Designation = request.Designation,
+                HireDate = request.HireDate,
+                Salary = request.Salary,
+                DeptNo = request.DeptNo,
+            };
+
+            await _employeeRepository.AddAsync(employee);
+            return employee.EmpNo;
+        }
     }
 }
