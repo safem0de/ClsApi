@@ -1,9 +1,13 @@
 using ClsApi.Api.Extensions;
 using ClsApi.Domain.Interfaces.Respositories;
+using ClsApi.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddApplicationServices();
 builder.Services.AddEndpointsApiExplorer();
