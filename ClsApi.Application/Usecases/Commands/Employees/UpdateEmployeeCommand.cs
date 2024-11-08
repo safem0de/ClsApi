@@ -1,9 +1,8 @@
-using ClsApi.Domain;
 using MediatR;
 
-namespace ClsApi.Application.Usecases.Queries.Employees
+namespace ClsApi.Application.Usecases.Commands.Employees
 {
-    public class GetEmployeeQuery : IRequest<Employee?>
+    public class UpdateEmployeeCommand : IRequest<int>
     {
         public int EmpNo { get; set; }
         public string FirstName { get; set; } = null!;
