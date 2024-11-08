@@ -27,8 +27,17 @@ namespace ClsApi.Application.Usecases.Commands
                 DeptNo = request.DeptNo,
             };
 
-            await _employeeRepository.AddAsync(employee);
-            return employee.EmpNo;
+            try
+            {
+                await _employeeRepository.AddAsync(employee);
+                return employee.EmpNo;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
+            }
         }
     }
+
 }

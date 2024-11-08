@@ -27,6 +27,7 @@ namespace ClsApi.Application.Usecases.Commands.Employees
                 employee.Designation = request.Designation;
                 employee.Salary = request.Salary;
                 employee.DeptNo = request.DeptNo;
+                employee.Comm = request.Comm;
 
                 await _employeeRepository.UpdateAsync(employee);
 

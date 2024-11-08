@@ -4,7 +4,6 @@ namespace ClsApi.Domain;
 
 public class Employee
 {
-    [Key]
     public int EmpNo { get; set; }
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;

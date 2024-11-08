@@ -2,6 +2,7 @@ using ClsApi.Api.Extensions;
 using ClsApi.Application.Interfaces.Respositories;
 using ClsApi.Infrastructure.Data;
 using ClsApi.Infrastructure.Interfaces.Respositories;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,11 +24,7 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var context = services.GetRequiredService<ApplicationDbContext>();
-
-        // Apply any pending migrations to the database
         context.Database.Migrate();
-
-        // Seed data
         await SeedDbContext.SeedData(context);
     }
     catch (Exception ex)
