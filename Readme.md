@@ -27,7 +27,7 @@ dotnet sln add ClsApi.Infrastructure
 dotnet sln add ClsApi.Api
 ```
 
-### Application Dependencies
+## Application Dependencies
 ```bash
 cd ClsApi.Application
 dotnet add reference ../ClsApi.Domain
@@ -54,9 +54,9 @@ dotnet ef migrations add InitialCreate --project ../ClsApi.Infrastructure --star
 dotnet ef database update --project ../ClsApi.Infrastructure --startup-project ../ClsApi.Api
 ```
 
-GET : http://localhost:5147/api/Employee/AllEmployees
-GET : http://localhost:5147/api/Employee/GetEmployeeById/{EmpNo}
-POST : http://localhost:5147/api/Employee/CreateEmployee
+### GET : http://localhost:5147/api/Employee/AllEmployees
+### GET : http://localhost:5147/api/Employee/GetEmployeeById/{EmpNo}
+### POST : http://localhost:5147/api/Employee/CreateEmployee
 ```bash
 {
   "empNo": 1018,
@@ -68,5 +68,5 @@ POST : http://localhost:5147/api/Employee/CreateEmployee
   "deptNo": 0,
 }
 ```
-PUT : http://localhost:5147/api/Employee/UpdateEmployee
-DELETE : http://localhost:5147/api/Employee/DeleteEmployee/{EmpNo}
+### PUT : http://localhost:5147/api/Employee/UpdateEmployee
+### DELETE : http://localhost:5147/api/Employee/DeleteEmployee/{EmpNo}
