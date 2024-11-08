@@ -1,4 +1,6 @@
-namespace ClsApi.Domain.Interfaces.Respositories
+using ClsApi.Domain;
+
+namespace ClsApi.Application.Interfaces.Respositories
 {
     public interface IEmployeeRepository
     {

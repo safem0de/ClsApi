@@ -22,3 +22,9 @@ dotnet add reference ../ClsApi.Application
 cd ../ClsApi.Api
 dotnet add reference ../ClsApi.Application
 dotnet add reference ../ClsApi.Infrastructure
+
+cd ClsApi.Infrastructure
+dotnet tool update --global dotnet-ef
+
+dotnet ef migrations add InitialCreate --project ../ClsApi.Infrastructure --startup-project ../ClsApi.Api
+dotnet ef database update --project ../ClsApi.Infrastructure --startup-project ../ClsApi.Api

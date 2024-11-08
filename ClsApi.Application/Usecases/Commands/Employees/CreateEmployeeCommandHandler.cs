@@ -1,6 +1,7 @@
 
+using ClsApi.Application.Interfaces.Respositories;
 using ClsApi.Domain;
-using ClsApi.Domain.Interfaces.Respositories;
+
 using MediatR;
 
 namespace ClsApi.Application.Usecases.Commands

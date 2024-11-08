@@ -1,7 +1,9 @@
+using ClsApi.Application.Interfaces.Respositories;
+using ClsApi.Domain;
 using ClsApi.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace ClsApi.Domain.Interfaces.Respositories
+namespace ClsApi.Infrastructure.Interfaces.Respositories
 {
     public class EmployeeRepository : IEmployeeRepository
     {
@@ -32,6 +34,7 @@ namespace ClsApi.Domain.Interfaces.Respositories
         {
             return await _context.Employees.ToListAsync();
         }
+
 
         public async Task<Employee?> GetByEmpNoAsync(int id)
         {

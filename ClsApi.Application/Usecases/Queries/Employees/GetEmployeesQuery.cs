@@ -3,7 +3,7 @@ using MediatR;
 
 namespace ClsApi.Application.Usecases.Queries.Employees
 {
-    public class GetEmployeeQuery : IRequest<Employee?>
+    public class GetEmployeesQuery : IRequest<IEnumerable<Employee>>
     {
         public int EmpNo { get; set; }
         public string FirstName { get; set; } = null!;

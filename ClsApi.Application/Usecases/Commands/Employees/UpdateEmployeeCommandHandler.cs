@@ -1,4 +1,4 @@
-using ClsApi.Domain.Interfaces.Respositories;
+using ClsApi.Application.Interfaces.Respositories;
 using MediatR;
 
 namespace ClsApi.Application.Usecases.Commands.Employees
