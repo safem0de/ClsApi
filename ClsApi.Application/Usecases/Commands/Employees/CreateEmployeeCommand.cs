@@ -8,7 +8,7 @@ namespace ClsApi.Application.Usecases.Commands
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public string Designation { get; set; } = null!;
-        public DateOnly HireDate { get; set; }
+        public DateOnly? HireDate { get; set; } = DateOnly.FromDateTime(DateTime.Today);
         public decimal Salary { get; set; }
         public int DeptNo { get; set; }
     }

@@ -25,7 +25,7 @@ namespace ClsApi.Application.Usecases.Commands.Employees
                 employee.FirstName = request.FirstName;
                 employee.LastName = request.LastName;
                 employee.Designation = request.Designation;
-                employee.Salary = request.Salary;
+                employee.Salary = request.Salary ?? employee.Salary;
                 employee.DeptNo = request.DeptNo;
                 employee.Comm = request.Comm;
 
